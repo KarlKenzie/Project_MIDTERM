@@ -3,34 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday!</title>
+  <title>Tribute to Dr. José Rizal</title>
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-  <h1 class="title">Happey BerthDeyyyy</h1>
+  <div class="tribute">
+    <p class="subtitle">A Tribute to</p>
+    <h1 class="name">Dr. José Rizal</h1>
+    <p class="dates">1861 &ndash; 1896</p>
 
-  <!-- CAKE -->
-  <div class="cake">
-    <div class="candles">
-      <div class="candle"><div class="flame"></div></div>
-      <div class="candle"><div class="flame"></div></div>
-      <div class="candle"><div class="flame"></div></div>
+    <!-- PUT YOUR IMAGE FILE NAME IN src -->
+    <div class="photo-frame">
+      <img src="img/rizal.jpg" alt="Dr. José Rizal">
     </div>
-    <div class="layer layer-top"><div class="drip"></div></div>
-    <div class="layer layer-middle"><div class="drip"></div></div>
-    <div class="layer layer-bottom"><div class="drip"></div></div>
-    <div class="plate"></div>
+
+    <p class="message">National Hero of the Philippines. Forever in our hearts.</p>
+
+    <button id="openBtn" class="tribute-btn">Watch the Tribute</button>
   </div>
 
-  <button id="openBtn" class="surprise-btn">Click for a surprise</button>
-
-  
+ 
   <div id="modal" class="modal" aria-hidden="true">
     <div class="modal-content">
       <button id="closeBtn" class="close-btn" aria-label="Close">&times;</button>
       <video id="video" controls playsinline>
-        <source src="img/berthday.mp4" type="video/mp4">
+        <source src="img/rizal.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
