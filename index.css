@@ -49,7 +49,7 @@ body {
   color: #d8d2c2;
 }
 
-/* ---------- PHOTO ---------- */
+
 .photo-frame {
   width: 260px;
   height: 320px;
@@ -65,11 +65,11 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;          /* fills the frame without stretching */
-  object-position: center top; /* change to "center center" if the face is cut off */
+  object-fit: cover;       
+  object-position: center top;
 }
 
-/* ---------- BUTTON ---------- */
+
 .tribute-btn {
   margin-top: 30px;
   padding: 13px 34px;
@@ -95,7 +95,7 @@ body {
   transform: scale(0.97);
 }
 
-/* ---------- VIDEO POPUP ---------- */
+
 .modal {
   position: fixed;
   inset: 0;
