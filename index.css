@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background: linear-gradient(160deg, #ffd6e8, #d6e4ff);
+  font-family: "Segoe UI", Arial, sans-serif;
+  overflow: hidden;
+}
+
+.title {
+  color: #d63384;
+  font-size: 2.4rem;
+  text-align: center;
+  text-shadow: 2px 2px 0 #fff;
+}
+
+/* ---------- CAKE ---------- */
+.cake {
+  position: relative;
+  width: 280px;
+  height: 260px;
+  margin-top: 40px;
+}
+
+.plate {
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 340px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.layer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.layer-bottom {
+  bottom: 0;
+  width: 280px;
+  height: 90px;
+  background: #8b4a2b;
+}
+
+.layer-middle {
+  bottom: 90px;
+  width: 220px;
+  height: 80px;
+  background: #c97b84;
+}
+
+.layer-top {
+  bottom: 170px;
+  width: 160px;
+  height: 70px;
+  background: #f7b2c4;
+}
+
+/* icing on top of each layer */
+.drip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 28px;
+  background: #fff;
+  border-radius: 12px 12px 0 0;
+}
+
+.drip::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background:
+    radial-gradient(circle at 10px 0, #fff 10px, transparent 11px) 0 0 / 30px 16px repeat-x;
+}
+
+/* ---------- CANDLES ---------- */
+.candles {
+  position: absolute;
+  bottom: 240px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 28px;
+  z-index: 2;
+}
+
+.candle {
+  position: relative;
+  width: 12px;
+  height: 46px;
+  background: repeating-linear-gradient(
+    45deg, #4dabf7, #4dabf7 6px, #fff 6px, #fff 12px
+  );
+  border-radius: 3px;
+}
+
+.flame {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 24px;
+  background: radial-gradient(circle at 50% 70%, #fff7a8, #ffb300 60%, #ff6f00);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: 0 0 14px 4px rgba(255, 170, 0, 0.7);
+  animation: flicker 0.15s infinite alternate;
+  transform-origin: 50% 100%;
+}
+
+@keyframes flicker {
+  from { transform: translateX(-50%) scale(1) rotate(-3deg); }
+  to   { transform: translateX(-50%) scale(1.1, 0.92) rotate(3deg); }
+}
+
+/* ---------- BUTTON ---------- */
+.surprise-btn {
+  margin-top: 20px;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #ff5fa2, #ff8a5c);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(255, 95, 162, 0.45);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.surprise-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 22px rgba(255, 95, 162, 0.55);
+}
+
+.surprise-btn:active {
+  transform: scale(0.97);
+}
+
+/* ---------- VIDEO POPUP ---------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+  padding: 20px;
+}
+
+.modal.open {
+  display: flex;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal-content {
+  position: relative;
+  width: min(800px, 100%);
+  background: #000;
+  border-radius: 12px;
+  padding: 10px;
+  animation: popIn 0.3s ease;
+}
+
+.modal-content video {
+  display: block;
+  width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #fff;
+  background: #ff5fa2;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
