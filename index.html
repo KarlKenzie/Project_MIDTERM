@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
 
+  <h1 class="title">Happy Birthday! 🎉</h1>
+
+  <!-- CAKE -->
+  <div class="cake">
+    <div class="candles">
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+    </div>
+    <div class="layer layer-top"><div class="drip"></div></div>
+    <div class="layer layer-middle"><div class="drip"></div></div>
+    <div class="layer layer-bottom"><div class="drip"></div></div>
+    <div class="plate"></div>
+  </div>
+
+  <button id="openBtn" class="surprise-btn">Click for a surprise 🎁</button>
+
+  
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="closeBtn" class="close-btn" aria-label="Close">&times;</button>
+      <video id="video" controls playsinline>
+        <source src="img/berthday.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
